@@ -1,0 +1,112 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+
+<body>
+
+
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+
+                        <div class="form-group row">
+                            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                            <div class="col-md-6">
+                                <input type="text" id="email_address" [(ngModel)]="emailAddress" class="form-control" name="email-address">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">city</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" [(ngModel)]="city" name="username">
+                            </div>
+                        </div> <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">country</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" [(ngModel)]="country" name="username">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">firstname</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" [(ngModel)]="firstname"name="username">
+                            </div>
+                        </div>
+                        <!-- <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" name="username">
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" name="username">
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-group row">
+                            <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="user_name" class="form-control" name="username">
+                            </div>
+                        </div> -->
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary" (click)="login()">Login
+                                </button>&nbsp;<span > <button type="submit" class="btn btn-primary" (click)="update(emailAddress)">
+                                 
+                                  Update
+                                  </button></span>
+                            </div>
+                          </form>
+                        </div>
+                    
+                </div>
+                    </div>
+            
+        </div>
+    </div>
+
+</main>
+<!-- <nav>
+  <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+</nav> -->
+<table>
+  <thead>
+    <th>#name</th>
+    <th>#Id</th>
+    <th>#city</th>
+    <th>#country</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of createarray">
+      <td>{{x.Id}}</td>
+      <td>{{x.city}}</td>
+      <td>{{x.country}}</td>
+      <td>{{x.firstname}}</td>
+      <td><button type="submit" class="btn btn-primary" (click)="Edit(x.Id)" >Edit
+      </button></td>
+      <td><button type="submit" class="btn btn-primary" (click)="delete(x.Id)" >Delete
+      </button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
